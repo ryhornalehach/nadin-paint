@@ -3,9 +3,7 @@ require 'rails_helper'
 RSpec.describe User, :type => :model do
   subject {
     described_class.new(
-        first_name: "Jason", last_name: "Bourne",
-        address: '100 Main st.', city: 'Lowell', state: 'MA', zip: '01802',
-        phone: '857-123-1234', email: "jbourne@hotmail.com", password: "test123"
+        name: "John Smith", email: "jsmith@hotmail.com", password: "test123"
       )
   }
 
@@ -13,24 +11,8 @@ RSpec.describe User, :type => :model do
     expect(subject).to be_valid
   end
 
-  it "is not valid without a first_name" do
-    subject.first_name = nil
-    expect(subject).to_not be_valid
-  end
-  it "is not valid without a last_name" do
-    subject.last_name = nil
-    expect(subject).to_not be_valid
-  end
-  it "is not valid without a address" do
-    subject.address = nil
-    expect(subject).to_not be_valid
-  end
-  it "is not valid without a city" do
-    subject.city = nil
-    expect(subject).to_not be_valid
-  end
-  it "is not valid without a phone" do
-    subject.phone = nil
+  it "is not valid without a name" do
+    subject.name = nil
     expect(subject).to_not be_valid
   end
   it "is not valid without a email" do

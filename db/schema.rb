@@ -10,22 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171203130400) do
+ActiveRecord::Schema.define(version: 20180107165637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "artworks", force: :cascade do |t|
+    t.string   "photo",       null: false
+    t.string   "text"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_artworks_on_category_id", using: :btree
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name",  null: false
+    t.string "photo"
+    t.text   "text"
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",                             null: false
-    t.string   "last_name",                              null: false
-    t.string   "address",                                null: false
-    t.string   "city",                                   null: false
-    t.string   "state"
-    t.string   "zip"
-    t.string   "phone",                                  null: false
+    t.string   "name",                                   null: false
     t.string   "email",                                  null: false
     t.boolean  "admin",                  default: false
-    t.string   "profile_photo"
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
