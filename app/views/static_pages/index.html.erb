@@ -1,0 +1,31 @@
+<style>
+  .container{
+    width: 100%;
+    max-width: initial;
+  }
+  .parallax-container {
+    min-height: 800px;
+    height: auto;
+  }
+</style>
+
+
+<div class="parallax-container">
+  <div class="parallax parallax-container"><img src="<%= asset_path('laptop.jpg')%>"></div>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div id="app">React
+    </div>
+
+    <div class="blackfield-right-bottom">
+      <%=link_to "© 2017 Greg (Ryhor) Nalehach", "http://gregnalehach.com" %>
+    </div>
+</div>
+
+
+
+ <script>
+   $('.parallax').parallax();
+ </script>

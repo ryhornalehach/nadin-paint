@@ -1,0 +1,1 @@
+User.create(first_name: 'Greg', last_name: 'Nalehach', address: '8 Beals Cove Rd.', city: 'Hingham', state: 'MA', zip: '02043', phone: '860-574-7407', email: 'gregnalegach@gmail.com', password: 'greg123', admin: true)
