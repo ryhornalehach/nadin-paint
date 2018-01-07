@@ -17,6 +17,5 @@
 
 $(document).ready(function() {
   Materialize.updateTextFields();
-  // $('.button-collapse').sideNav();
-  // $('.parallax').parallax();
+  $('.slider').slider({interval: 10000, transition: 1000});
 });

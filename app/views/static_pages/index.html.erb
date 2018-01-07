@@ -1,31 +1,39 @@
-<style>
-  .container{
-    width: 100%;
-    max-width: initial;
-  }
-  .parallax-container {
-    min-height: 800px;
-    height: auto;
-  }
-</style>
-
-
-<div class="parallax-container">
-  <div class="parallax parallax-container"><img src="<%= asset_path('laptop.jpg')%>"></div>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <div id="app">React
-    </div>
-
-    <div class="blackfield-right-bottom">
-      <%=link_to "© 2017 Greg (Ryhor) Nalehach", "http://gregnalehach.com" %>
-    </div>
+<div class="slider fullscreen font-kristi">
+    <ul class="slides">
+        <li>
+            <img src="https://s3.amazonaws.com/gregnalehach/screenshots/Brainstormer-screenshot.png">
+            <div class="caption center-align">
+              <h3>Caricatures by photo</h3>
+              <h5 class="light grey-text text-lighten-3">Here's some text</h5>
+            </div>
+        </li>
+        <li>
+            <img src="https://s3.amazonaws.com/gregnalehach/screenshots/Cupids-compass-screenshot.png">
+            <div class="caption left-align">
+              <h3>Murals</h3>
+              <h5 class="light grey-text text-lighten-3">Here's some text</h5>
+            </div>
+        </li>
+        <li>
+            <img src="https://s3.amazonaws.com/gregnalehach/screenshots/Dispatcher-app-screenshot.png">
+            <div class="caption right-align">
+              <h3>Oil paintings</h3>
+              <h5 class="light grey-text text-lighten-3">Here's some text</h5>
+            </div>
+        </li>
+        <li>
+            <img src="https://s3.amazonaws.com/gregnalehach/screenshots/20170724_205946.jpg">
+            <div class="caption center-align">
+              <h1>This is our big Tagline!</h1>
+              <h5 class="light grey-text text-lighten-3">Here's some text</h5>
+            </div>
+        </li>
+    </ul>
 </div>
 
+<div id="app">React
+</div>
 
-
- <script>
-   $('.parallax').parallax();
- </script>
+<div class="blackfield-right-bottom">
+  <%=link_to "© 2017 Greg (Ryhor) Nalehach", "http://gregnalehach.com" %>
+</div>

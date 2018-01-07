@@ -2,14 +2,13 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width">
-    <title>Jackal</title>
+    <title>Nadin Paint</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi|Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
 
   <header>
@@ -30,7 +29,7 @@
               <li><%=link_to "Sign In", new_user_session_path %></li>
               <li><%=link_to "Sign Up", new_user_registration_path %></li>
             <% end %>
-            <li><%= link_to "Game Rules", root_path %> </li>
+            <li><%= link_to "Home", root_path %> </li>
           </ul>
           <ul class="side-nav flow-text" id="mobile-demo">
             <% if current_user %>
@@ -45,7 +44,7 @@
               <li><%=link_to "Sign In", new_user_session_path %></li>
               <li><%=link_to "Sign Up", new_user_registration_path %></li>
             <% end %>
-            <li><%= link_to "Game Rules", root_path %> </li>
+            <li><%= link_to "Home", root_path %> </li>
           </ul>
         </div>
       </nav>

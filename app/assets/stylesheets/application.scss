@@ -3,6 +3,14 @@
 
 //// custom styling goes next
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.font-kristi {
+  font-family: 'Kristi', cursive;
+}
+
 .navbar-color {
   background: #78909C;
 }
@@ -93,4 +101,9 @@ div.blackfield-main h1,h2,p {
 
 div.blackfield-main h1,h2 {
   text-align: center;
+}
+
+.carousel-item img {
+  // height: 150%;
+  // width: 150%;
 }
