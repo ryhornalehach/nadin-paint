@@ -1,0 +1,22 @@
+<h3>Artworks</h3>
+<%= link_to "New Artwork", new_artwork_path, class: 'waves-effect waves-light btn navbar-color-dark' %>
+<table id = "artworks" class="display nowrap" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @artworks.each do |artwork| %>
+      <tr>
+        <td><%= link_to artwork.category_id, artwork %></td>
+        <td><%= link_to artwork.text, artwork %></td>
+        <td><%= link_to "Edit Artwork", edit_artwork_path(artwork), class: 'waves-effect waves-light btn navbar-color-dark' %></td>
+        <td><%= link_to "Delete Artwork", artwork_path(artwork), method: :delete, data: {confirm: "Are You Sure?"}, class: 'waves-effect waves-light btn red' %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

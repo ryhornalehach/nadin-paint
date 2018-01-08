@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col s12">
+    <div class="row">
+      <div class="col s12">
+        <h4><b>New category</b></h4>
+      </div>
+    </div>
+
+    <%= form_for @category do |f| %>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_field :name, type: "text", :required => true %>
+          <%= f.label :name %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :text %>
+          <%= f.text_area :text %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="file-field input-field col s12 l6">
+          <div class="btn navbar-color-dark">
+            <span>Photo</span>
+            <%= f.file_field :photo, id: "upload"%>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate", placeholder="Upload new image">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <%= f.submit "Submit New Category", class: "btn waves-effect waves-light navbar-color-dark" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
