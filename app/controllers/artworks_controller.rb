@@ -29,9 +29,9 @@ class ArtworksController < ApplicationController
   def create
     @new_artwork = Artwork.new(edit_artwork_params)
     if @new_artwork.save
-      redirect_to root_path, notice: "Artwork was successfully submitted."
+      redirect_to artworks_path, notice: "Artwork was successfully submitted."
     else
-      redirect_to root_path, notice: "Artwork not submitted due to an error in the submitted form."
+      redirect_to artworks_path, notice: "Artwork not submitted due to an error in the submitted form."
     end
   end
 

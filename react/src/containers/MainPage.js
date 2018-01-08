@@ -5,15 +5,18 @@ class MainPage extends Component {
   constructor(props){
     super(props)
     this.state = {
-      selected: null
+      categories: null
     }
+  }
+
+  componentDidMount() {
   }
 
   render() {
 
     return (
-      <div className='row'>
-          Hi there
+      <div className="row">
+          Hi from react
       </div>
     )
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, browserHistory } from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { Router, Link } from 'react-router-dom';
-import MainPage from './MainPage'
+import Gallery from './Gallery'
 
 const history = createBrowserHistory();
 
@@ -18,7 +18,7 @@ class App extends Component {
       <div>
         <Router history={history}>
           <Switch>
-            <Route exact path='/' component={MainPage} />
+            <Route exact path='/gallery' component={Gallery} />
           </Switch>
         </Router>
       </div>

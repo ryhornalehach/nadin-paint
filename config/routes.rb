@@ -4,5 +4,12 @@ Rails.application.routes.draw do
   resources :categories
   resources :artworks
   root 'static_pages#index'
+  resources :gallery, only: [:index, :show], to: 'static_pages#index2'
+
+  namespace :api do
+    namespace :v1 do
+      resources :categories, only: [:index]
+    end
+  end
 
 end
