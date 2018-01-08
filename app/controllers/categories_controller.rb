@@ -29,9 +29,9 @@ class CategoriesController < ApplicationController
   def create
     @new_category = Category.new(edit_category_params)
     if @new_category.save
-      redirect_to root_path, notice: "Category was successfully submitted."
+      redirect_to categories_path, notice: "Category was successfully submitted."
     else
-      redirect_to root_path, notice: "Category not submitted due to an error in the submitted form."
+      redirect_to categories_path, notice: "Category not submitted due to an error in the submitted form."
     end
   end
 
