@@ -1,0 +1,20 @@
+<h3>Categories</h3>
+<%= link_to "New Category", new_category_path, class: 'waves-effect waves-light btn navbar-color-dark' %>
+<table id = "categories" class="display nowrap" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, category %></td>
+        <td><%= link_to "Edit category", edit_category_path(category), class: 'waves-effect waves-light btn navbar-color-dark' %></td>
+        <td><%= link_to "Delete category", category_path(category), method: :delete, data: {confirm: "Are You Sure?"}, class: 'waves-effect waves-light btn red' %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,22 @@
+<% if current_user && current_user.admin? %>
+  <div class="row">
+    <div class="col s12">
+      <ul>
+        <li><b>Category:</b> <%= @artwork.category_id %></li>
+        <li><b>Description:</b> <%= @artwork.text %></li>
+        <% if @artwork.photo.file.nil? %>
+            <li>-No image-</li>
+        <% else %>
+            <li><img src=<%= @artwork.photo %> height="250" ></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <%= link_to "Edit artwork", edit_artwork_path(@artwork), class: "btn waves-effect waves-light navbar-color-dark" %>
+      <%= link_to "Delete artwork", artwork_path(@artwork), method: :delete, data: {confirm: "Are You Sure?"}, class: 'waves-effect waves-light btn red' %>
+    </div>
+  </div>
+<%end%>
