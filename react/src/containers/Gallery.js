@@ -33,7 +33,6 @@ class Gallery extends Component {
             name={category.name}
             text={category.text}
           />
-
         )
       })
     }

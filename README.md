@@ -14,6 +14,7 @@ NadinPaint portfolio website
   5. Application deployed in production using Heroku
   6. Amazon Web Services (S3) with Carrierwave gem for photo uploads
   7. Devise gem for user authentication
+  8. 'react-image-lightbox' package for images lightboxes
 
 # To start the application:
   1. Bundle install ruby gems:
