@@ -24,10 +24,11 @@ class Gallery extends Component {
   render() {
     let categories;
     if (this.state.categories) {
-      categories = this.state.categories.map((category, index) => {
+      categories = this.state.categories.map((category) => {
         return (
           <GalleryTile
-            key={index}
+            key={category.id}
+            id={category.id}
             photo={category.photo.url}
             name={category.name}
             text={category.text}
@@ -38,7 +39,7 @@ class Gallery extends Component {
     }
 
     return (
-      <div className="font-cursive">
+      <div className="row">
         {categories}
       </div>
     )

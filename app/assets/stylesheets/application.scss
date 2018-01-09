@@ -17,6 +17,20 @@ body {
   font-size: 550%;
 }
 
+img .activator {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a .font-cursive-shadow, p .font-cursive-shadow {
+  color: black;
+}
+
+a .font-cursive {
+  color: black;
+}
+
 .navbar-color {
   background: #78909C;
 }
@@ -47,14 +61,13 @@ body {
   margin-bottom: 10px;
 }
 
+.large-160 {
+  font-size: 160%;
+}
+
 .large-120 {
   font-size: 120%;
   opacity: 1;
   color: black !important;
   text-shadow: 2px 2px 4px #ffffff;
-}
-
-.carousel-item img {
-  // height: 150%;
-  // width: 150%;
 }
