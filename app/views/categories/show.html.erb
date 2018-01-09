@@ -7,7 +7,7 @@
         <% if @category.photo.file.nil? %>
             <li>-No image-</li>
         <% else %>
-            <li><img src=<%= @category.photo %> height="250" ></li>
+            <li><img src=<%= @category.photo %> class="col s12 m4 l3"></li>
         <% end %>
       </ul>
     </div>
