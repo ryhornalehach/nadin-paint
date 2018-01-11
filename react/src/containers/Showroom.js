@@ -7,8 +7,11 @@ class Showroom extends Component {
   constructor(props){
     super(props)
     this.state = {
-      artworks: null
+      artworks: null,
+      photoIndex: 0,
+      isOpen: false
     }
+    this.handleImagePush = this.handleImagePush.bind(this);
   }
 
   componentDidMount() {
@@ -23,23 +26,52 @@ class Showroom extends Component {
     })
   }
 
+  handleImagePush(event) {
+      this.setState({ isOpen: true, photoIndex: event.target.id })
+  }
+
+
   render() {
-    let artworks;
+    let artworks, lightbox;
+    let images = [];
     if (this.state.artworks) {
-      artworks = this.state.artworks.map((artwork) => {
+      artworks = this.state.artworks.map((artwork, index) => {
+        images.push(artwork.photo.url)
+
         return (
           <ShowroomTile
             key={artwork.id}
             photo={artwork.photo.url}
             text={artwork.text}
+            handleImagePush={this.handleImagePush}
+            index={index}
           />
         )
       })
+    }
+    if (this.state.isOpen) {  // displaying the lightbox
+      lightbox = <Lightbox
+                    mainSrc={images[this.state.photoIndex]}
+                    nextSrc={images[(this.state.photoIndex + 1) % images.length]}
+                    prevSrc={images[(this.state.photoIndex + images.length - 1) % images.length]}
+                    onCloseRequest={() => this.setState({ isOpen: false })}
+                    onMovePrevRequest={() =>
+                      this.setState({
+                        photoIndex: (this.state.photoIndex + images.length - 1) % images.length,
+                      })
+                    }
+                    onMoveNextRequest={() =>
+                      this.setState({
+                        photoIndex: (this.state.photoIndex + 1) % images.length,
+                      })
+                    }
+                />
     }
 
     return (
       <div className="row">
         {artworks}
+        {lightbox}
       </div>
     )
   }
