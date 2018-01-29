@@ -1,7 +1,5 @@
 @import "materialize";   //// import Materialize styling first
-// @import "*";           //// import all other .css files
-
-//// custom styling goes next
+@import "*";           //// import all other .css files
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -36,15 +34,6 @@ img {
   margin: auto;
   margin-top: 30px;
   border-radius: 100px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.boxed {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #a4a4a4;
-  padding: 4px;
-  margin: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
