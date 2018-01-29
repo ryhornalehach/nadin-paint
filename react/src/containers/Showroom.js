@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Link } from 'react-router-dom';
 import ShowroomTile from '../components/ShowroomTile'
-import Lightbox from 'react-image-lightbox';
+import LightboxCss from '../components/LightboxCss'
 
 class Showroom extends Component {
   constructor(props){
@@ -27,51 +27,47 @@ class Showroom extends Component {
   }
 
   handleImagePush(event) {
-      this.setState({ isOpen: true, photoIndex: event.target.id })
+    // setting the state to 'open' and the index of the photo needs to be parsed from the id of the element
+      this.setState({ isOpen: true, photoIndex: parseInt(event.target.id) })
   }
 
 
   render() {
-    let artworks, lightbox;
-    let images = [];
+    let artworks, lightboxCSS;
     if (this.state.artworks) {
+      // mapping the artworks and creating the array of 'ShowroomTiles'
       artworks = this.state.artworks.map((artwork, index) => {
-        images.push(artwork.photo.url)
-
         return (
           <ShowroomTile
-            key={artwork.id}
-            photo={artwork.photo.url}
-            text={artwork.text}
-            handleImagePush={this.handleImagePush}
-            index={index}
+              key={artwork.id}
+              photo={artwork.photo.url}
+              text={artwork.text}
+              handleImagePush={this.handleImagePush}
+              index={index}
           />
         )
       })
     }
     if (this.state.isOpen) {  // displaying the lightbox
-      lightbox = <Lightbox
-                    mainSrc={images[this.state.photoIndex]}
-                    nextSrc={images[(this.state.photoIndex + 1) % images.length]}
-                    prevSrc={images[(this.state.photoIndex + images.length - 1) % images.length]}
-                    onCloseRequest={() => this.setState({ isOpen: false })}
-                    onMovePrevRequest={() =>
-                      this.setState({
-                        photoIndex: (this.state.photoIndex + images.length - 1) % images.length,
-                      })
-                    }
-                    onMoveNextRequest={() =>
-                      this.setState({
-                        photoIndex: (this.state.photoIndex + 1) % images.length,
-                      })
-                    }
-                />
+      lightboxCSS = <LightboxCss
+                        onCloseRequest={() => this.setState({ isOpen: false })}
+                        onMovePrevRequest={() =>
+                          this.setState({ photoIndex: (this.state.photoIndex + this.state.artworks.length - 1) % this.state.artworks.length })
+                        }
+                        onMoveNextRequest={() =>
+                          this.setState({ photoIndex: (this.state.photoIndex + 1) % this.state.artworks.length })
+                        }
+                        photoUrl={this.state.artworks[this.state.photoIndex].photo.url}
+                        totalPhotos={this.state.artworks.length}
+                        photoIndex={parseInt(this.state.photoIndex) + 1}
+                        text={this.state.artworks[this.state.photoIndex].text}
+                    />
     }
 
     return (
       <div className="row">
         {artworks}
-        {lightbox}
+        {lightboxCSS}
       </div>
     )
   }

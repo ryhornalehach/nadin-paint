@@ -8,8 +8,10 @@ const ShowroomTile = props => {
 
   return (
 
-    <div className="boxed col s12 m4 l3">
-        {photo}
+    <div className="no-padding col s12 m4 l3">
+        <div className="boxed">
+            {photo}
+        </div>
     </div>
   )
 }
