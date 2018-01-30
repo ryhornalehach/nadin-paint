@@ -2,7 +2,7 @@ class ArtworksUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.test?
@@ -26,7 +26,7 @@ class ArtworksUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process resize_to_fit: [1600, 1600]
+  process resize_to_fit: [1600, 1600]
   #
   # def scale(width, height)
   #   # do something

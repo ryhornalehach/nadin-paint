@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'listen'
 gem "devise"  # autentication
 gem "carrierwave" # uploading files gem
-# gem "mini_magick" # resizing uploaded images
+gem "mini_magick" # resizing uploaded images
 gem 'fog'   # cloud service library (needed for AWS)
 gem 'materialize-sass'  # adding materialize css
 
