@@ -40,7 +40,7 @@ class Showroom extends Component {
         return (
           <ShowroomTile
               key={artwork.id}
-              photo={artwork.photo.url}
+              photo={artwork.photo.thumb.url}
               text={artwork.text}
               handleImagePush={this.handleImagePush}
               index={index}
